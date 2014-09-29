@@ -1,12 +1,12 @@
 Summary:	SVG Rendering Library
 Name:		librsvg
-Version:	2.40.2
+Version:	2.40.4
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/librsvg/2.40/%{name}-%{version}.tar.xz
-# Source0-md5:	acdecdb9f08f3bf662a68bf7dafb8b82
+# Source0-md5:	1b561f478428a2fd947acb402ed4b142
 Patch0:		%{name}-parse-path-crash.patch
 URL:		http://live.gnome.org/LibRsvg
 BuildRequires:	autoconf
@@ -14,7 +14,6 @@ BuildRequires:	automake
 BuildRequires:	gdk-pixbuf-devel >= 2.30.0
 BuildRequires:	gtk-doc
 BuildRequires:	libcroco-devel
-BuildRequires:	libgsf-devel
 BuildRequires:	libtool
 BuildRequires:	libxml2-devel
 BuildRequires:	popt-devel
@@ -86,7 +85,7 @@ rm -rf $RPM_BUILD_ROOT
 	DESTDIR=$RPM_BUILD_ROOT \
 	pkgconfigdir=%{_pkgconfigdir}
 
-%{__rm} $RPM_BUILD_ROOT%{_libdir}/*/*/*/*.la
+%{__rm} $RPM_BUILD_ROOT%{_libdir}/{,*/*/*/}*.la
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -114,7 +113,6 @@ fi
 %files devel
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so
-%{_libdir}/lib*.la
 %{_datadir}/gir-1.0/Rsvg-2.0.gir
 %{_pkgconfigdir}/*.pc
 %{_includedir}/librsvg-2.0
