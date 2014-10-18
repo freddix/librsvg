@@ -1,12 +1,12 @@
 Summary:	SVG Rendering Library
 Name:		librsvg
-Version:	2.40.4
+Version:	2.40.5
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/librsvg/2.40/%{name}-%{version}.tar.xz
-# Source0-md5:	1b561f478428a2fd947acb402ed4b142
+# Source0-md5:	c2b044fccf415902a052d0e978e0ea60
 Patch0:		%{name}-parse-path-crash.patch
 URL:		http://live.gnome.org/LibRsvg
 BuildRequires:	autoconf
