@@ -1,13 +1,12 @@
 Summary:	SVG Rendering Library
 Name:		librsvg
-Version:	2.40.6
+Version:	2.40.8
 Release:	1
 Epoch:		1
 License:	GPL v2+
 Group:		Libraries
 Source0:	http://ftp.gnome.org/pub/gnome/sources/librsvg/2.40/%{name}-%{version}.tar.xz
-# Source0-md5:	259fd160b47ec11f3c27d7e18e507c99
-Patch0:		%{name}-parse-path-crash.patch
+# Source0-md5:	35078ce6aba11c2b73156517611fc7a4
 URL:		http://live.gnome.org/LibRsvg
 BuildRequires:	autoconf
 BuildRequires:	automake
@@ -60,7 +59,6 @@ Gtk+ rsvg pixbuffer loader.
 
 %prep
 %setup -q
-%patch0 -p1
 
 # Makefile.am:255: ENABLE_VAPIGEN does not appear in AM_CONDITIONAL
 echo 'AC_DEFUN([VAPIGEN_CHECK],[AM_CONDITIONAL([ENABLE_VAPIGEN], [false])])' >> acinclude.m4
